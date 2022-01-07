@@ -7,9 +7,12 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+	<!-- context:property-placeholder : 외부 property 파일 로딩 -->
 	<context:property-placeholder location="classpath:database/jdbc.properties"/>
+	<!-- context:component-scan : 빈으로 등록 될 준비를 마친 클래스들을 스캔하여, 빈으로 등록 -->
 	<context:component-scan base-package="com.spring_mvc.mybatis" />
 	
+	<!-- DataSource : java 에서 connection pool(DBCP)을 지원하기 위한 객체 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
@@ -17,10 +20,14 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 	
+	<!-- SqlSessionFactory : 데이터베이스와의 연결과 SQL의 실행에 필요한 객체 
+		 - DataSource를 참조하여 MyBatis와 Mysql 서버를 연동
+	-->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:com/spring_mvc/mybatis/**/*.xml" />
 	</bean>
 	
+	<!-- mybatis가 처리할 부분을 설정 -->
 	<mybatis-spring:scan base-package="com.spring_mvc.mybatis.dao"/>
 </beans>

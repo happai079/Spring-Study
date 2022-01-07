@@ -19,7 +19,8 @@
 			</tr>
 			<c:forEach items="${ prdList }" var="prd">
 				<tr>
-					<td>${ prd.prdNo }</td>
+					<!-- 상품 번호 클릭시 상세 상품 정보 페이지로 이동 -->
+					<td><a href="<c:url value='/product/detailViewProduct/${ prd.prdNo }' />">${ prd.prdNo }</a></td>
 					<td>${ prd.prdName }</td>
 					<td>${ prd.prdPrice }</td>
 					<td>${ prd.prdCompany }</td>
