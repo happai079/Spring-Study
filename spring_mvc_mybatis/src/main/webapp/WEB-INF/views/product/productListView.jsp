@@ -28,8 +28,8 @@
 			</c:forEach>
 		</table><br>
 		
-		<a href="/mybatis">메인 화면으로 이동</a><br>
 		<a href="<c:url value="/" />">메인 화면으로 이동</a>
+		<!-- <a href="/mybatis">메인 화면으로 이동</a><br>  - 위랑 같은 표현 -->
 		
 	</body>
 </html>
