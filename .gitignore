@@ -20,6 +20,12 @@ local.properties
 # JDT-specific (Ecilpse Java Development Tools)
 .classpath
 
+# ignore properties file
+jdbc.properties
+
+# STS (Spring Tool Suite)
+.springBeans
+
 # External tool builders
 .externalToolBuilders/
 
@@ -95,6 +101,9 @@ local.properties
 *.tar.gz
 *.rar
 
+### Server ###
+Servers/
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -125,6 +134,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
-
-### Server ###
-Servers/
