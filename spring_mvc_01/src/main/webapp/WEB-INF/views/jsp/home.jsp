@@ -12,7 +12,7 @@
 	</h1>
 	
 	<P>  The time on the server is ${serverTime}. </P>
-	<img src="resources/images/apple.png"/><p>
+	<img src="/project/resources/images/apple.png"/><p>
 	
 	<a href="student/studentForm">학생 등록</a><br>
 	<a href="product/productForm">상품 등록</a>

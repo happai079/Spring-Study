@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Product Result</title>
+		<title>Command 객체 이름 변경</title>
 		<style type="text/css">
 			table, tr, td {
 				border: 1px solid black;			
@@ -22,32 +22,28 @@
 		<table>
 			<tr>
 				<td>상품번호</td>
-				<td>${ prdNo }</td>
+				<td>${ prd.prdNo }</td>
 			</tr>
 			<tr>
 				<td>상품명</td>
-				<td>${ prdName }</td>
+				<td>${ prd.prdName }</td>
 			</tr>
 			<tr>
 				<td>가격</td>
-				<td>${ prdPrice }</td>
+				<td>${ prd.prdPrice }</td>
 			</tr>
 			<tr>
 				<td>제조회사</td>
-				<td>${ prdMaker }</td>
+				<td>${ prd.prdMaker }</td>
 			</tr>
 			<tr>
 				<td>제조일</td>
-				<td>${ prdDate }</td>
+				<td>${ prd.prdDate }</td>
 			</tr>
 			<tr>
 				<td>재고</td>
-				<td>${ prdQty }</td>
+				<td>${ prd.prdQty }</td>
 			</tr>
 		</table>
-		
-		<br><br>
-		url을 통한 데이터 전송<br>
-		<a href="/project/product/productModify/${ prdNo }">${ prdNo }</a>
 	</body>
 </html>

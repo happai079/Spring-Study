@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Product Result</title>
+		<title>상품 정보 등록 결과</title>
 		<style type="text/css">
 			table, tr, td {
 				border: 1px solid black;			
@@ -22,32 +22,28 @@
 		<table>
 			<tr>
 				<td>상품번호</td>
-				<td>${ prdNo }</td>
+				<td>${ product.prdNo }</td>
 			</tr>
 			<tr>
 				<td>상품명</td>
-				<td>${ prdName }</td>
+				<td>${ product.prdName }</td>
 			</tr>
 			<tr>
 				<td>가격</td>
-				<td>${ prdPrice }</td>
+				<td>${ product.prdPrice }</td>
 			</tr>
 			<tr>
 				<td>제조회사</td>
-				<td>${ prdMaker }</td>
+				<td>${ product.prdMaker }</td>
 			</tr>
 			<tr>
 				<td>제조일</td>
-				<td>${ prdDate }</td>
+				<td>${ product.prdDate }</td>
 			</tr>
 			<tr>
 				<td>재고</td>
-				<td>${ prdQty }</td>
+				<td>${ product.prdQty }</td>
 			</tr>
 		</table>
-		
-		<br><br>
-		url을 통한 데이터 전송<br>
-		<a href="/project/product/productModify/${ prdNo }">${ prdNo }</a>
 	</body>
 </html>

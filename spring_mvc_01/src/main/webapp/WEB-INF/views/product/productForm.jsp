@@ -28,7 +28,7 @@
 				</tr>
 				<tr>
 					<td>제조일</td>
-					<td><input type="text" name="prdDate"></td>
+					<td><input type="date" name="prdDate"></td>
 				</tr>
 				<tr>
 					<td>재고</td>

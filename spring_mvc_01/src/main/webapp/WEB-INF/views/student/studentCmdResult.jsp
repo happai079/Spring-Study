@@ -4,15 +4,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Student Result</title>
+		<title>studentCmdResult : Command 객체 사용</title>
 	</head>
 	<body>
 		<h3>학생 정보 등록 결과</h3>
-		학번 : ${ no }<br>
-		성명 : ${ name }<br>
-		학년 : ${ year }
-		<br><br>
-		url을 통한 데이터 전송<br>
-		<a href="/project/student/studentModify/${ no }">${ no }</a>
+		학번 : ${ student.no }<br>
+		성명 : ${ student.name }<br>
+		학년 : ${ student.year }
 	</body>
 </html>
