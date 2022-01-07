@@ -11,5 +11,6 @@
 		<h4>상품 관리 시스템</h4>
 		<br>
 		<a href="product/listAllProduct">전체 상품 조회</a><br><br>
+		<a href="product/newProductForm">상품 정보 등록</a><br><br>
 	</body>
 </html>

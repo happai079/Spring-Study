@@ -14,8 +14,21 @@
 		<result property="prdStock" column="prdStock" />
 	</resultMap>
 	
+	<!-- 
+		SQL 
+		- id:dao의 메서드 이름 
+		- resultMap: 반환값, mapper에서 설정한 id
+		- parameterType: 인자값, mapper에서 설정한 type 
+	-->
+	
 	<!-- 전체 상품 조회 -->
 	<select id="listAllProduct" resultMap="prdResult">
 		SELECT * FROM product ORDER BY prdNo
 	</select>
+	
+	<!-- 상품 등록 -->
+	<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+		INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
+					VALUES(#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}) 
+	</insert>
 </mapper>

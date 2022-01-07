@@ -28,4 +28,19 @@ public class ProductController {
 		model.addAttribute("prdList", prdList);
 		return "product/productListView";
 	}
+	
+	// 상품 등록폼으로 이동
+	@RequestMapping("/product/newProductForm")
+	public String newProductForm() {
+		return "product/newProductForm";
+	}
+	
+	// 상품 정보 등록
+	@RequestMapping("/product/insertProduct")
+	public String insertProduct(ProductVO prd) {	// Command 객체
+		service.insertProduct(prd);
+		return "redirect:./listAllProduct"; 		// 다시 전체 조회하여 보여줌
+		// return "redirect:/product/listAllProduct";
+		// return "/product/productListView";		// 그냥 뷰 페이지로 이동하면 데이터가 안 보임
+	}
 }
