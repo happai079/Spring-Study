@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="nameService" class="com.di.spring_di_xml_setter.NameService" />
+	<bean id="nameController" class="com.di.spring_di_xml_setter.NameController">
+		<!-- setter 기반 의존성 주입: <property> 태그 -->
+		<!-- name: setter 메서드 이름 / ref: 의존성있는 빈 -->
+		<property name="nameService" ref="nameService" /> 
+	</bean>
+	
+</beans>

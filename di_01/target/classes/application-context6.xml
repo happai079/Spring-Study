@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- BMI 클래스 빈 생성 -->
+	<bean id="bmi" class="com.di.spring_di_xml_setter_value.BMI" />
+	
+	<!-- Member 클래스 빈 생성 -->
+	<bean id="member" class="com.di.spring_di_xml_setter_value.Member">
+		<!-- Setter 기반 di 설정 -->
+		<property name="bmi" ref="bmi" />
+		
+		<!-- 매개변수 있는 생성자 - 값 설정(순서대로) -->
+		<!-- 이름, 나이, 키, 몸무게, 코스(arrayList)-->
+		<property name="name" value="이몽룡" />
+		<property name="age" value="20" />
+		<property name="height" value="166" />
+		<property name="weight" value="64" />
+		<property name="courses">
+			<list>  <!-- ArrayList 값 설정 -->
+				<value>테니스</value>
+				<value>헬스</value>
+				<value>축구</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
