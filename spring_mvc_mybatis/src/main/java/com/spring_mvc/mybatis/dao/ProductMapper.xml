@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper : sql문을 자바코드에서 분리 -->
+<mapper namespace="com.spring_mvc.mybatis.dao.IProductDAO">
+	<!-- 쿼리 수행 후 반환값 : ProductVO -->
+	<resultMap id="prdResult" type="com.spring_mvc.mybatis.model.ProductVO">
+		<result property="prdNo" column="prdNo" />
+		<result property="prdName" column="prdName" />
+		<result property="prdPrice" column="prdPrice" />
+		<result property="prdCompany" column="prdCompany" />
+		<result property="prdStock" column="prdStock" />
+	</resultMap>
+	
+	<!-- 전체 상품 조회 -->
+	<select id="listAllProduct" resultMap="prdResult">
+		SELECT * FROM product ORDER BY prdNo
+	</select>
+</mapper>
