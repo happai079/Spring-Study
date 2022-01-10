@@ -46,8 +46,7 @@ public class ProductService implements IProductService {
 	// 상세 상품 조회
 	@Override
 	public ProductVO detailViewProduct(String prdNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.detailViewProduct(prdNo);
 	}
 
 }

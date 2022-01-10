@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring_mvc.mybatis.model.ProductVO;
@@ -42,5 +43,15 @@ public class ProductController {
 		return "redirect:./listAllProduct"; 		// 다시 전체 조회하여 보여줌
 		// return "redirect:/product/listAllProduct";
 		// return "/product/productListView";		// 그냥 뷰 페이지로 이동하면 데이터가 안 보임
+	}
+	
+	// 상품 상제 정보 페이지로 이동
+	@RequestMapping("/product/detailViewProduct/{prdNo}")
+	// @PathVariableView - 페이지에서 url을 통해 controller로 데이터 전송
+	public String detailViewProduct(@PathVariable String prdNo, Model model) {
+		// 상품번호 전달하고, 해당 상품 정보 받아오기 
+		ProductVO prd = service.detailViewProduct(prdNo);
+		model.addAttribute("prd", prd);
+		return "product/productDetailView";  // 상품 상세 정보 뷰 페이지
 	}
 }
