@@ -54,4 +54,20 @@ public class ProductController {
 		model.addAttribute("prd", prd);
 		return "product/productDetailView";  // 상품 상세 정보 뷰 페이지
 	}
+	
+	// 상품 정보 수정 페이지로 이동 (입력 폼에 기존 정보 보여주기)
+	@RequestMapping("/product/updateProductForm/{prdNo}")
+	public String updateProductForm(@PathVariable String prdNo, Model model) {
+		// 상품번호 전달하고, 해당 상품 정보 받아오기 
+		ProductVO prd = service.detailViewProduct(prdNo);
+		model.addAttribute("prd", prd);
+		return "product/updateProductForm";
+	}
+	
+	// 상품 정보 수정
+	@RequestMapping("/product/updateProduct")
+	public String updateProduct(ProductVO prd) {	// Command 객체
+		service.updateProduct(prd);
+		return "redirect:./listAllProduct"; 		// 다시 전체 조회하여 보여줌
+	}
 }

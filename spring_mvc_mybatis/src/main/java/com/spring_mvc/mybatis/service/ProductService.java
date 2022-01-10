@@ -32,7 +32,7 @@ public class ProductService implements IProductService {
 	// 상품 정보 수정
 	@Override
 	public void updateProduct(ProductVO prdVo) {
-		// TODO Auto-generated method stub
+		dao.updateProduct(prdVo);
 
 	}
 

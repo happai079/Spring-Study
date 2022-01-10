@@ -17,6 +17,7 @@
 				<tr><td>재고</td><td>${prd.prdStock }</td></tr>
 			</table><br>
 			
+			<a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">상품 정보 수정</a><br>
 			<a href="<c:url value='/'/>">메인 화면으로 이동</a>
 	</body>
 </html>
