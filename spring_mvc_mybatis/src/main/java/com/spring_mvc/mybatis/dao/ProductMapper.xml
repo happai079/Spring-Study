@@ -45,4 +45,9 @@
 						   prdCompany=#{prdCompany}, prdStock=#{prdStock} 
 		WHERE prdNo=#{prdNo}
 	</update>
+	
+	<!-- 상품 정보 삭제 -->
+	<delete id="deleteProduct" parameterType="string">
+		DELETE FROM product WHERE prdNo=#{prdNo}
+	</delete>
 </mapper>

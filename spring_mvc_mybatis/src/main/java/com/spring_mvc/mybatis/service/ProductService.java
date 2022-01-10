@@ -39,8 +39,7 @@ public class ProductService implements IProductService {
 	// 상품 정보 삭제
 	@Override
 	public void deleteProduct(String prdNo) {
-		// TODO Auto-generated method stub
-
+		dao.deleteProduct(prdNo);
 	}
 
 	// 상세 상품 조회

@@ -70,4 +70,12 @@ public class ProductController {
 		service.updateProduct(prd);
 		return "redirect:./listAllProduct"; 		// 다시 전체 조회하여 보여줌
 	}
+	
+	// 상품 정보 삭제
+	@RequestMapping("/product/deleteProduct/{prdNo}")
+	public String deleteProduct(@PathVariable String prdNo) {
+		service.deleteProduct(prdNo);
+		return "redirect:../listAllProduct";  // 전체 상품 조회 페이지로 포워딩
+		//return "redirect:/product/listAllProduct"; // 이렇게 해도 오류 없음
+	}
 }
