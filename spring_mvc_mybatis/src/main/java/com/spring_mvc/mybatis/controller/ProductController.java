@@ -96,6 +96,12 @@ public class ProductController {
 		if(prdNo_result == null) result="use";
 		return result;
 	}
+	
+	// 상품 검색폼으로 이동
+	@RequestMapping("/product/productSearchForm")
+	public String productSearchForm() {
+		return "product/productSearchForm";
+	}
 }
 
 
