@@ -16,8 +16,8 @@ public class AjaxController {
 	// 로그인 처리
 	@ResponseBody
 	@RequestMapping("/login")
-	public String loginCheck(@RequestParam("user_id") String id,
-							 @RequestParam("user_pw") String pw) {
+	public String loginCheck(@RequestParam("id") String id,
+							 @RequestParam("pw") String pw) {
 		String result ="";
 		if(id.equals("abcd") && pw.equals("1234"))
 			result="success";
