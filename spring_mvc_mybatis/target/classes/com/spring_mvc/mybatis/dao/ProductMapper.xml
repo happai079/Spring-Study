@@ -45,6 +45,19 @@
   		<select id="prdNoCheck" parameterType="string" resultType="string">
   			SELECT prdNo FROM product WHERE prdNo=#{prdNo}
   		</select>
+  		
+  		<!-- 상품 검색 -->
+  		<select id="productSearch" resultMap="prdResult" parameterType="hashmap">
+  			SELECT * FROM product WHERE
+  			<choose>
+  				<when test="type != null and type.equals('prdName')">
+  					prdName LIKE CONCAT('%',#{keyword},'%')
+  				</when>
+  				<when test="type != null and type.equals('prdCompany')">
+  					prdCompany LIKE CONCAT('%',#{keyword},'%')
+  				</when>
+  			</choose>
+  		</select>
   </mapper>
   
   

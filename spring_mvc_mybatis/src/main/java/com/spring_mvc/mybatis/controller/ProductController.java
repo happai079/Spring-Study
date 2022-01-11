@@ -1,6 +1,7 @@
 package com.spring_mvc.mybatis.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -101,6 +102,17 @@ public class ProductController {
 	@RequestMapping("/product/productSearchForm")
 	public String productSearchForm() {
 		return "product/productSearchForm";
+	}
+	
+	// 상품 검색
+	@ResponseBody
+	@RequestMapping("/product/productSearch")
+//	public ArrayList<ProductVO> productSearch(@RequestParam("type") String type,
+//											  @RequestParam("keyword") String keyword){
+	public ArrayList<ProductVO> productSearch(@RequestParam HashMap<String, Object> param, Model model){
+		ArrayList<ProductVO> prdList = service.productSearch(param);
+		model.addAttribute("prdList", prdList);
+		return prdList;
 	}
 }
 
