@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring_mvc.mybatis.model.ProductVO;
 import com.spring_mvc.mybatis.service.ProductService;
@@ -82,6 +84,17 @@ public class ProductController {
 		service.deleteProduct(prdNo);
 		return "redirect:../listAllProduct";  // 전체 상품 조회 페이지로 포워딩
 		//return "redirect:/product/listAllProduct"; // 이렇게 해도 오류 없음
+	}
+	
+	// 상품 번호 중복 확인
+	@ResponseBody
+	@RequestMapping("/product/prdNoCheck")
+	public String prdNoCheck(@RequestParam String prdNo) {
+		String prdNo_result = service.prdNoCheck(prdNo);
+		String result = "no_use";
+		
+		if(prdNo_result == null) result="use";
+		return result;
 	}
 }
 

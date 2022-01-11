@@ -41,4 +41,9 @@ public class ProductService implements IProductService {
 		return dao.detailViewProduct(prdNo);
 	}
 
+	@Override
+	public String prdNoCheck(String prdNo) {
+		return dao.prdNoCheck(prdNo);
+	}
+
 }
