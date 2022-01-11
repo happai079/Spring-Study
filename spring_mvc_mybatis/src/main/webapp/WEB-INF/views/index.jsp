@@ -13,6 +13,10 @@
 			<a href="product/listAllProduct">전체 상품 조회</a><br><br>
 			<a href="product/newProductForm">상품 등록</a><br><br>
 			
-			<img src="/mybatis/resources/image/apple.png">
+			<img src="/mybatis/resources/image/apple.png"><br><br>
+			
+			<hr>
+			<h3>Ajax 연습</h3>
+			<a href="loginForm">로그인</a><br><br>
 	</body>
 </html>
