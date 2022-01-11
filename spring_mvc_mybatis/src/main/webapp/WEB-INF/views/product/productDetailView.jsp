@@ -17,10 +17,13 @@
 				<tr><td>재고</td><td>${prd.prdStock }</td></tr>
 			</table><br>
 			
-			<a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">상품 정보 수정</a><br>
+			<!-- 상품 정보 수정 화면으로 이동  -->
+			<a href="/mybatis/product/updateProductForm/${prd.prdNo}">상품 정보 수정</a><br><br>
+			또는 <br>
+			<a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">상품 정보 수정</a><br><br>
 			
-			<!-- 상품 정보 삭제: 삭제 여부 확인(javaScript) -->
-			<a href="javascript:deleteCheck();">상품 정보 삭제</a><br>
+			<!-- 상품 정보 삭제 : 삭제 여부 확인 처리 (자바스크립트로) -->
+			<a href="javascript:deleteCheck();">상품 정보 삭제</a><br><br>
 			<script type="text/javascript">
 				function deleteCheck(){
 					var answer = confirm("선택한 상품을 삭제하시겠습니까?");
@@ -29,7 +32,12 @@
 					}
 				}
 			</script>
-
+			
 			<a href="<c:url value='/'/>">메인 화면으로 이동</a>
 	</body>
 </html>
+
+
+
+
+

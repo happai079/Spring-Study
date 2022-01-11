@@ -2,52 +2,51 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!-- mapper : sql문을 자바코드에서 분리 -->
-<mapper namespace="com.spring_mvc.mybatis.dao.IProductDAO">
-	<!-- 쿼리 수행 후 반환값 : ProductVO -->
-	<resultMap id="prdResult" type="com.spring_mvc.mybatis.model.ProductVO">
-		<result property="prdNo" column="prdNo" />
-		<result property="prdName" column="prdName" />
-		<result property="prdPrice" column="prdPrice" />
-		<result property="prdCompany" column="prdCompany" />
-		<result property="prdStock" column="prdStock" />
-	</resultMap>
-	
-	<!-- 
-		SQL 
-		- id:dao의 메서드 이름 
-		- resultType: 반환값, 
-		- resultMap: mapper에서 설정한 반환값
-		- parameterType: 인자값
-		- mapper에서 값은 `#{}`로 받음  
-	-->
-	
-	<!-- 전체 상품 조회 -->
-	<select id="listAllProduct" resultMap="prdResult">
-		SELECT * FROM product ORDER BY prdNo
-	</select>
-	
-	<!-- 상품 등록 -->
-	<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
-		INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
-					VALUES(#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}) 
-	</insert>
-	
-	<!-- 상품 상세 정보 조회  -->
-	<select id="detailViewProduct" parameterType="string" resultType="com.spring_mvc.mybatis.model.ProductVO">
-		SELECT * FROM product WHERE prdNo=#{prdNo}  		
-	</select>
-	
-	<!-- 상품 정보 수정 -->
-	<update id="updateProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
-		UPDATE product SET prdName=#{prdName}, prdPrice=#{prdPrice},
-						   prdCompany=#{prdCompany}, prdStock=#{prdStock} 
-		WHERE prdNo=#{prdNo}
-	</update>
-	
-	<!-- 상품 정보 삭제 -->
-	<delete id="deleteProduct" parameterType="string">
-		DELETE FROM product WHERE prdNo=#{prdNo}
-	</delete>
-</mapper>
+  
+  <mapper namespace="com.spring_mvc.mybatis.dao.IProductDAO">
+  		<resultMap  id="prdResult" type="com.spring_mvc.mybatis.model.ProductVO">
+  			<result property="prdNo" column="prdNo" />
+  			<result property="prdName" column="prdName" />
+  			<result property="prdPrice" column="prdPrice" />
+  			<result property="prdCompany" column="prdCompany" />
+  			<result property="prdStock" column="prdStock" />	
+  		</resultMap> 
+  
+  		<!-- 전체 상품 조회 -->
+  		<select id="listAllProduct" resultMap="prdResult">
+  			SELECT * FROM product ORDER BY prdNo
+  		</select>  
+  		
+  		<!-- 상품 등록  -->
+  		<insert id="insertProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+  			INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock)
+  			VALUES (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
+  		</insert>
+  		
+  		<!-- 상품 상세 정보 조회  -->
+  		<select id="detailViewProduct" parameterType="string" 
+  														  resultType="com.spring_mvc.mybatis.model.ProductVO">
+  			SELECT * FROM product WHERE prdNo=#{prdNo}  		
+  		</select>
+  		
+  		<!-- 상품 정보 수정 : 수정된 정보 DB에 저장 (상품번호는 수정 안 함 : 기본키 변경 안 함) -->
+  		<update id="updateProduct" parameterType="com.spring_mvc.mybatis.model.ProductVO">
+  			UPDATE product SET prdName=#{prdName}, prdPrice=#{prdPrice}, 
+  						  prdCompany=#{prdCompany}, prdStock=#{prdStock} 
+  			WHERE prdNo=#{prdNo}
+  		</update>
+  		
+  		<!-- 상품 정보 삭제  -->
+  		<delete id="deleteProduct"  parameterType="string">
+  			DELETE FROM product WHERE prdNo=#{prdNo}
+  		</delete>
+  </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -5,7 +5,7 @@ public class ProductVO {
 	private String prdName;
 	private int prdPrice;
 	private String prdCompany;
-	private String prdStock;
+	private int prdStock;
 	
 	public String getPrdNo() {
 		return prdNo;
@@ -31,10 +31,10 @@ public class ProductVO {
 	public void setPrdCompany(String prdCompany) {
 		this.prdCompany = prdCompany;
 	}
-	public String getPrdStock() {
+	public int getPrdStock() {
 		return prdStock;
 	}
-	public void setPrdStock(String prdStock) {
+	public void setPrdStock(int prdStock) {
 		this.prdStock = prdStock;
-	}
-}	
+	}		
+}
