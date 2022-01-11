@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<title>상품 검색</title>
 		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-		<script src="<c:url value='/js/prdNoCheck.js'/>"></script>
+		<script src="<c:url value='/js/productSearch.js'/>"></script>
 	</head>
 	<body>
 		<h3>상품 검색</h3>
