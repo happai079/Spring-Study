@@ -18,5 +18,6 @@
 			<hr>
 			<h3>Ajax 연습</h3>
 			<a href="loginForm">로그인</a><br><br>
+			<a href="loginForm2">로그인2</a><br><br>
 	</body>
 </html>

@@ -28,4 +28,10 @@ public class AjaxController {
 		// @ResponseBody가 없는 경우 : success.jsp 또는 fail.jsp 반환
 		// @ResponseBody가 있는 경우 : 본문(body)에 result 포함해서 반환(새 페이지에서 success 또는 fail 출력)
 	}
+	
+	// 로그인 폼으로 이동
+	@RequestMapping("/loginForm2")
+	public String loginForm2() {
+		return "ajax/loginForm2";
+	}
 }
