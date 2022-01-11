@@ -114,6 +114,20 @@ public class ProductController {
 		model.addAttribute("prdList", prdList);
 		return prdList;
 	}
+	
+	// 상품 검색폼2으로 이동
+	@RequestMapping("/product/productSearchForm2")
+	public String productSearchForm2() {
+		return "product/productSearchForm2";
+	}
+	
+	// 상품 검색 - 뷰 페이지 이동
+	@RequestMapping("/product/productSearch2")
+	public String productSearch2(@RequestParam HashMap<String, Object> param, Model model){
+		ArrayList<ProductVO> prdList = service.productSearch(param);
+		model.addAttribute("prdList", prdList);
+		return "product/productSearchResultView";
+	}
 }
 
 
