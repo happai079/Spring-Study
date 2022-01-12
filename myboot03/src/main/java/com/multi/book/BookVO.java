@@ -1,7 +1,5 @@
 package com.multi.book;
 
-import java.sql.Date;
-
 public class BookVO {
 	private String bookNo;
 	private String bookName;
