@@ -30,7 +30,7 @@ $(document).ready(function(){
 												  			  result[i].prdPrice + '</td><td>' +
 												  			  result[i].prdCompany + '</td><td>' +
 												  			  result[i].prdStock + '</td><td>' +
-						'<img src="/mybatis/images/'+ result[i].prdNo + '.jpg" width="30" height="20"></td></tr>');
+						'<img src="/images/'+ result[i].prdNo + '.jpg" width="30" height="20"></td></tr>');
 					}
 					$('#resultTable').append('</table>');
 				}
