@@ -20,7 +20,7 @@
 				$('#searchResultBox').empty();
 				$('#searchResultBox').append('<table id="resultTable" border="1" width="600">' +
 						'<tr><th>도서번호</th><th>도서명</th><th>저자</th>' +
-						'<th>가격</th><th>출간일</th><th>재고</th></tr>');
+						'<th>가격</th><th>출간일</th><th>재고</th><th>사진</th></tr>');
 				if(result == ""){
 					$('#resultTable').append('<tr align="center"><td colspan="6">찾는 상품이 없습니다.</td></tr>');
 				}else{
@@ -30,8 +30,8 @@
 															result[i].bookAuthor + '</td><td>' +
 															result[i].bookPrice + '</td><td>' +
 															result[i].bookDate + '</td><td>' +
-															result[i].qtyNo + '</td></td>'/* +
-						'<img src="/mybatis/images/' + result[i].prdNo + '.jpg" width="30" height="20"></td></tr>'*/);
+															result[i].qtyNo + '</td><td>' +
+						'<img src="/book/images/' + result[i].bookNo + '.jpg" width="30" height="20"></td></tr>');
 
 					}
 				}

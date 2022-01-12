@@ -17,6 +17,7 @@
 			<th>가격</th>
 			<th>출판일</th>
 			<th>재고</th>
+			<th>사진</th>
 		</tr>
 		
 		<c:forEach items="${bookList }" var="book">
@@ -27,6 +28,7 @@
 				<td>${book.bookPrice}</td>
 				<td>${book.bookDate}</td>
 				<td>${book.qtyNo}</td>
+				<td><img src="<c:url value='/images/${book.bookNo}.jpg'/>" width="30" height="20"></td>
 			</tr>
 		</c:forEach>
 	</table> <br>
