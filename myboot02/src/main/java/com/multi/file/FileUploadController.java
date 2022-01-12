@@ -77,4 +77,26 @@ public class FileUploadController {
 		model.addAttribute("originalFileNameList", originalFileNameList);
 		return "upload/fileUploadMultipleResult";
 	}
+	
+	// 파일명 그대로 업로드
+	@RequestMapping("/fileOriginalNameUpload")
+	public String fileOriginalNameUpload(@RequestParam("uploadFile") MultipartFile file, Model model) throws IOException {
+		
+		// 1. 파일 저장 경로 설정: 실제 서비스되는 위치(프로젝트 외부에 저장)
+		String uploadPath = "C:/spring-workspace/upload/";
+		
+		// 2. 원본 파일 이름 알아오기
+		String originalFileName = file.getOriginalFilename();
+		
+		// 3. 파일 생성
+		File file1 = new File(uploadPath + originalFileName);
+		
+		// 4. 서버로 전송
+		file.transferTo(file1);
+		
+		// model로 저장
+		model.addAttribute("originalFileName", originalFileName);
+		
+		return "upload/fileUploadResult";
+	}
 }

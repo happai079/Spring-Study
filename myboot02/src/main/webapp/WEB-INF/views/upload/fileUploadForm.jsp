@@ -20,5 +20,12 @@
 			파일 : <input type="file" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple"><br><br>
 			<input type="submit" value="업로드">
 		</form>
+
+		<hr>
+		<h3>파일명 그대로 업로드</h3>
+		<form id="fileOriginalNameUploadForm" method="post" action="<c:url value='/fileOriginalNameUpload'/>" enctype="multipart/form-data">
+			파일 : <input type="file" id="uploadFile" name="uploadFile"><br><br>
+			<input type="submit" value="업로드">
+		</form>
 	</body>
 </html>
