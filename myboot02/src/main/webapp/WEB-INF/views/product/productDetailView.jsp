@@ -26,7 +26,7 @@
 				function deleteCheck(){
 					var answer = confirm("선택한 상품을 삭제하시겠습니까?");
 					if(answer == true){
-						location.href="/mybatis/product/deleteProduct/${prd.prdNo}";
+						location.href="/product/deleteProduct/${prd.prdNo}";
 					}
 				}
 			</script>
