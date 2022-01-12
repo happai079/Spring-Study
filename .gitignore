@@ -21,7 +21,7 @@ local.properties
 .classpath
 
 # ignore properties file
-jdbc.properties
+*.properties
 
 # STS (Spring Tool Suite)
 .springBeans
