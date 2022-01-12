@@ -37,7 +37,7 @@
 	</table>
 	<br>
 	<!-- 도서 정보 수정 -->
-	<a href="<c:url value='/book/updateBookForm/${book.bookNo }' />">도서 정보 수정</a> <br>
+	<a href="<c:url value='/book/updateBookForm/${book.bookNo }'/>">도서 정보 수정</a> <br>
 	<!-- 도서 정보 삭제 -->
 	<a href="javascript:deleteCheck();">도서 정보 삭제</a> <br>
 	<script type="text/javascript">
