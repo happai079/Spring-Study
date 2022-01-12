@@ -42,7 +42,6 @@ public class BookController {
 		// 도서 등록
 		@RequestMapping("/book/insertBook")
 		public String insertBook(BookVO book) {
-			System.out.println(book.getBookNo());
 			service.insertBook(book);
 			return "redirect:./listAllBook";
 		}
