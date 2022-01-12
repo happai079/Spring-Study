@@ -21,5 +21,9 @@
 			<h3>Ajax 연습</h3>
 			<a href="loginForm">로그인</a><br><br>
 			<a href="loginForm2">로그인2</a><br><br>
+			
+			<hr>
+			<h3>@RestController 연습</h3>
+			<a href="product/productSearchForm3">상품 검색3</a><br><br>
 	</body>
 </html>

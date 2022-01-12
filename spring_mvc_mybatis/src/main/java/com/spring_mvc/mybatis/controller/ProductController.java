@@ -128,6 +128,12 @@ public class ProductController {
 		model.addAttribute("prdList", prdList);
 		return "product/productSearchResultView";
 	}
+	
+	// 상품 검색폼2으로 이동
+	@RequestMapping("/product/productSearchForm3")
+	public String productSearchForm3() {
+		return "product/productSearchForm3";
+	}
 }
 
 
