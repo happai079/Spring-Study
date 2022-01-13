@@ -24,7 +24,10 @@
 		<header>
 			<div id="headerBox">
 				<div id="logoBox"><a href="index.html"><img src="image/logo.png" id="logoImg"></a></div>
-				<div id="topMenuBox">로그인 이벤트 장바구니 고객센터 회원가입</div>
+				<div id="topMenuBox">
+					<a href="<c:url value='/loginForm'/>">로그인</a>
+				 	이벤트 장바구니 고객센터 회원가입
+				</div>
 			</div>
 		</header>
 		
