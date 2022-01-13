@@ -23,10 +23,22 @@
 		<!-- Header -->
 		<header>
 			<div id="headerBox">
-				<div id="logoBox"><a href="index.html"><img src="image/logo.png" id="logoImg"></a></div>
+				<div id="logoBox"><a href="<c:url value='/'/>"><img src="image/logo.png" id="logoImg"></a></div>
 				<div id="topMenuBox">
-					<a href="<c:url value='/loginForm'/>">로그인</a>
-				 	이벤트 장바구니 고객센터 회원가입
+				
+					<!-- 로그인 전 -->
+					<c:if test="${ empty sessionScope.sid }">
+						<a href="<c:url value='/loginForm'/>">로그인</a>
+						<a href="<c:url value='/joinForm'/>">회원가입</a>
+						고객센터
+				 	</c:if>
+				 	
+				 	<!-- 로그인 후 -->
+				 	<c:if test="${ not empty sessionScope.sid }">
+				 		${ sessionScope.sid }님 환영합니다!&nbsp;&nbsp; 
+				 		<a href="<c:url value='/logout'/>">로그아웃</a>
+				 		게시판 이벤트 장바구니 MyPage
+				 	</c:if>
 				</div>
 			</div>
 		</header>

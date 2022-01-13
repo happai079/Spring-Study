@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.boot.projectEx.dao.IMemberDAO">
+  		<resultMap id="memberResult" type="com.boot.projectEx.model.MemberVO">
+  			<result property="memId" column="memId" />
+  			<result property="memPwd" column="memPwd" />
+  			<result property="memName" column="memName" />
+  			<result property="memEmail" column="memEmail" />
+  			<result property="memJoinDate" column="memJoinDate" />
+  		</resultMap>
+  		
+  		<!-- Login -->
+  		<select id="loginCheck" resultMap="memberResult" parameterType="hashmap">
+  			SELECT * FROM member WHERE memId=#{id} AND memPwd=#{pwd}
+  		</select>
+  </mapper>

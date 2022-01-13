@@ -3,51 +3,51 @@ package com.boot.projectEx.model;
 import java.util.Date;
 
 public class MemberVO {
-	private String memerId;
-	private String memerPwd;
-	private String memerName;
-	private String memerEmail;
-	private Date memerJoinDate;
+	private String memId;
+	private String memPwd;
+	private String memName;
+	private String memEmail;
+	private Date memJoinDate;
 	
 	public MemberVO(){}
 
-	public String getMemerId() {
-		return memerId;
+	public String getMemId() {
+		return memId;
 	}
 
-	public void setMemerId(String memerId) {
-		this.memerId = memerId;
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 
-	public String getMemerPwd() {
-		return memerPwd;
+	public String getMemPwd() {
+		return memPwd;
 	}
 
-	public void setMemerPwd(String memerPwd) {
-		this.memerPwd = memerPwd;
+	public void setMemPwd(String memPwd) {
+		this.memPwd = memPwd;
 	}
 
-	public String getMemerName() {
-		return memerName;
+	public String getMemName() {
+		return memName;
 	}
 
-	public void setMemerName(String memerName) {
-		this.memerName = memerName;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
 
-	public String getMemerEmail() {
-		return memerEmail;
+	public String getMemEmail() {
+		return memEmail;
 	}
 
-	public void setMemerEmail(String memerEmail) {
-		this.memerEmail = memerEmail;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
 
-	public Date getMemerJoinDate() {
-		return memerJoinDate;
+	public Date getMemJoinDate() {
+		return memJoinDate;
 	}
 
-	public void setMemerJoinDate(Date memerJoinDate) {
-		this.memerJoinDate = memerJoinDate;
+	public void setMemJoinDate(Date memJoinDate) {
+		this.memJoinDate = memJoinDate;
 	}
 }

@@ -5,7 +5,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>로그인</title>  
+		<title>로그인</title> 
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="js/loginCheck.js"></script> 
 	</head>
 	<body>
 		<div id="wrap"> 
@@ -15,7 +17,7 @@
 			<!--  로그인 폼  -->
 			<section>
 		        <h1 id="title">로그인</h1>
-		        <form id="loginForm" name="loginForm" method="post"  action="/login">
+		        <form id="loginForm" name="loginForm">
 		          <table>
 		            <tr><th> ID</th><td><input type="text" id="id" name="id" ></td></tr>
 		            <tr><th>비밀번호</th><td><input type="password" id="pwd" name="pwd"></td></tr>
