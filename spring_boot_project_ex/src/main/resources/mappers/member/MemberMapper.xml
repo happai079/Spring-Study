@@ -16,4 +16,9 @@
   		<select id="loginCheck" resultMap="memberResult" parameterType="hashmap">
   			SELECT * FROM member WHERE memId=#{id} AND memPwd=#{pwd}
   		</select>
+  		
+  		<!-- 아이디 중복 체크 -->
+  		<select id="idCheck" resultType="string" parameterType="string">
+  			SELECT memId FROM member WHERE memId=#{id}
+  		</select>
   </mapper>

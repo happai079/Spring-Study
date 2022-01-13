@@ -6,4 +6,5 @@ import com.boot.projectEx.model.MemberVO;
 
 public interface IMemberDAO {
 	MemberVO loginCheck(HashMap<String, Object> map); // 로그인 
+	String idCheck(String memId);
 }

@@ -20,5 +20,10 @@ public class MemberService implements IMemberService {
 		return dao.loginCheck(map);
 	}
 
+	@Override
+	public String idCheck(String memId) {
+		return dao.idCheck(memId);
+	}
+
 
 }

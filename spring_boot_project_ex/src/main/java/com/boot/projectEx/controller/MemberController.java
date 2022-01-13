@@ -39,4 +39,28 @@ public class MemberController {
 		return loginResult;
 	}
 	
+	// 로그아웃 처리
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
+	// 회원가입 폼으로 이동
+	@RequestMapping("/joinForm")
+	public String joinForm() {
+		return "member/joinForm";
+	}
+	
+	// 아이디 중복 체크 처리
+	@ResponseBody
+	@RequestMapping("/idCheck")
+	public String idCheck(@RequestParam("memId") String memId) {
+		String memId_result = service.idCheck(memId);
+		
+		String result = "use";
+		if(memId_result != null) result = "no_use";
+		return result;
+	}
+	
 }
