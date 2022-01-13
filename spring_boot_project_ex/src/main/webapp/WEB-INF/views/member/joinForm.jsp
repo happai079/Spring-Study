@@ -9,6 +9,8 @@
 		<link href="<c:url value='/css/join.css'/>" rel="stylesheet" type="text/css">
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="js/idCheck.js"></script> 	
+		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> 	
+		<script src="js/searchZip.js"></script> 	
 	</head>
 	<body>
 		<div id="wrap">
