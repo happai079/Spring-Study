@@ -3,12 +3,19 @@ package com.boot.projectEx.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.boot.projectEx.dao.IProductDAO;
 import com.boot.projectEx.model.ProductVO;
 
 @Service
 public class ProductService implements IProductService {
+	//MyBatis 사용하는 경우
+	@Autowired
+	@Qualifier("IProductDAO")
+	IProductDAO dao;
 
 	@Override
 	public ArrayList<ProductVO> listAllProduct() {
@@ -36,8 +43,7 @@ public class ProductService implements IProductService {
 
 	@Override
 	public ProductVO detailViewProduct(String prdNo) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.detailViewProduct(prdNo);
 	}
 
 	@Override
@@ -54,8 +60,7 @@ public class ProductService implements IProductService {
 
 	@Override
 	public ArrayList<ProductVO> listCtgProduct(String ctgId) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.listCtgProduct(ctgId) ;
 	}
 
 }

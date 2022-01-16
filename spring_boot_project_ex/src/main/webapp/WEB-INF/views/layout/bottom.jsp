@@ -20,8 +20,8 @@
 						<li><a href="#">채용정보</a></li>
 					</ul>
 				</div>
-				<div id="companyInfo"><img src="image/footer.png"></div>
-				<div id="moveToTopBox"><img src="image/moveToTop.png" id="moveToTop"></div>
+				<div id="companyInfo"><img src="<c:url value='/image/footer.png'/>"></div>
+				<div id="moveToTopBox"><img src="<c:url value='/image/moveToTop.png'/>" id="moveToTop"></div>
 			</div>
 		</footer>
 	</body>
