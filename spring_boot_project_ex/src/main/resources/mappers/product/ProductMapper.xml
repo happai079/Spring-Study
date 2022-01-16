@@ -8,4 +8,9 @@
 	<select resultType="com.boot.projectEx.model.ProductVO" parameterType="string" id="listCtgProduct">
 		SELECT * FROM product WHERE ctgId=#{ctgId} ORDER BY prdNo
 	</select>
+	
+	<!-- 상세 상품 정보 조회 -->
+	<select resultType="com.boot.projectEx.model.ProductVO" parameterType="string" id="detailViewProduct">
+		SELECT * FROM product WHERE prdNo=#{prdNo} 
+	</select>
 </mapper>

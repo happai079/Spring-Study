@@ -23,13 +23,17 @@ public class ProductController {
 		model.addAttribute("prdList", prdList);
 		return "product/productListCtgView";
 	}
+	
+	// 상품 상세 정보 조회
+	@RequestMapping("/product/detailViewProduct/{prdNo}")
+	public String detailViewProduct(@PathVariable String prdNo, Model model) {
+		System.out.println(prdNo);
+		
+		// 상품번호 전달하고 해당 상품 정보 받아오기 
+		ProductVO prd = service.detailViewProduct(prdNo);
+		model.addAttribute("prd", prd);
+		
+		System.out.println(prd.getPrdNo()); // Mapper에서 상품을 검색해서 반환했는지 확인 
+		return "product/productDetailView";
+	}
 }
-/*
-		 * System.out.println(prdNo);
-		 * 
-		 * // 상품번호 전달하고 해당 상품 정보 받아오기 ProductVO prd = service.detailViewProduct(prdNo);
-		 * model.addAttribute("prd", prd);
-		 * 
-		 * System.out.println(prd.getPrdNo()); // Mapper에서 상품을 검색해서 반환했는지 확인 return
-		 * "product/productDetailView";
-		 */
