@@ -23,6 +23,9 @@ local.properties
 # ignore properties file
 *.properties
 
+# ignore Mood Project
+Mood/
+
 # STS (Spring Tool Suite)
 .springBeans
 
