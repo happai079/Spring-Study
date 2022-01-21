@@ -9,6 +9,7 @@
 	<body>
 		<h3>Naver AI Platform</h3>
 		
-		<a href="faceRecogCelForm">유명인 얼굴 인식</a>
+		<a href="faceRecogCelForm">유명인 얼굴 인식</a><br><br>
+		<a href="faceRecogForm">얼굴 감지</a><br><br>
 	</body>
 </html>
