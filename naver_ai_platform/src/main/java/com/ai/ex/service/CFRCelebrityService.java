@@ -25,18 +25,19 @@ public class CFRCelebrityService {
 	
 	@Value("${ai.cfr.clientId}")
 	private String ID;
-
 	@Value("${ai.cfr.clientSecret}")
 	private String SECRETE;
 	
-	public void clovaFaceRecogCel() {
+	public ArrayList<CelebrityVO> clovaFaceRecogCel(String filePathName) {
 		StringBuffer reqStr = new StringBuffer();
 		 String clientId = ID;//애플리케이션 클라이언트 아이디값";
 	     String clientSecret = SECRETE;//애플리케이션 클라이언트 시크릿값";
+	     
+	     ArrayList<CelebrityVO> celList = new ArrayList<CelebrityVO>();
 
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
-            String imgFile = "C:/ai/song.jpg";  // 전송할 이미지 파일
+            String imgFile = filePathName;  // 전송할 이미지 파일
             File uploadFile = new File(imgFile);
             String apiURL = "https://naveropenapi.apigw.ntruss.com/vision/v1/celebrity"; // 유명인 얼굴 인식
             URL url = new URL(apiURL);
@@ -86,12 +87,17 @@ public class CFRCelebrityService {
                 }
                 br.close();
                 System.out.println(response.toString()); // 서버로부터 받은 결과를 콘솔에 출력 (JSON 형태)
+                // jsonToList() 메서드 호출하면서 json문자열 전달
+                celList = jsonToVoList(response.toString());
             } else {
                 System.out.println("error !!!");
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+        
+        // CelebrityVO 리스트 반환
+        return celList;
 	}
 	
 	// API 서버로부토 받은 JSON 형태의 결과 데이터에서 value, confidence 추출

@@ -28,5 +28,20 @@
     "name": "ai.cfr.clientId",
     "type": "java.lang.String",
     "description": "A description for 'ai.cfr.clientId'"
+  },
+  {
+    "name": "ai.cfr.clientId",
+    "type": "java.lang.String",
+    "description": "A description for 'ai.cfr.clientId'"
+  },
+  {
+    "name": "ai.cfr.clientId",
+    "type": "java.lang.String",
+    "description": "A description for 'ai.cfr.clientId'"
+  },
+  {
+    "name": "ai.cfr.clientSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'ai.cfr.clientSecret'"
   }
 ]}
