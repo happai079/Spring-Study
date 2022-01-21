@@ -1,4 +1,4 @@
-package com.ai.ex.naver_ai_platform;
+package com.ai.ex;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

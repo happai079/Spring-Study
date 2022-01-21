@@ -1,4 +1,4 @@
-package com.ai.ex.naver_ai_platform;
+package com.ai.ex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
