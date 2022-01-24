@@ -23,10 +23,10 @@ public class OCRService {
 	@Value("${ai.ocr.url}")
 	private String URL;
 	
-	public void clovaOCRService() {
+	public String clovaOCRService(String filePathName) {
 		String apiURL = URL;
 		String secretKey = KEY;
-		String imageFile = "C:/ai/movie.jpg";
+		String imageFile = filePathName;
 		
 		String result = "";
 
@@ -75,13 +75,14 @@ public class OCRService {
 			}
 			br.close();
 
-			System.out.println(response);
+			// System.out.println(response);
 			// jsonToString() 메서드 호출하고 결과가져옴
 			result = jsonToString(response.toString());
-			System.out.println(result);
+			// System.out.println(result);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		return result;
 	}
 
 	private static void writeMultiPart(OutputStream out, String jsonMessage, File file, String boundary) throws
