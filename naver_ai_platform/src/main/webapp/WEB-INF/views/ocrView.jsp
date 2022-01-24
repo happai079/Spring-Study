@@ -6,8 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>OCR</title>
-		<script src="js/jquery-3.6.0.min.js"></script>
-		<script src="js/ocr.js"></script>
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<script src="<c:url value='/js/ocr.js'/>"></script>
 	</head>
 	<body>
 		<h3>OCR</h3>
@@ -24,5 +24,11 @@
 			<span class="resultText"></span>
 		</div>
 		<br><br>
+		
+		<!-- 이미지 출력 -->
+		<div id="image">
+		</div>
+		<br><br>
+		<a href="/">index 페이지로 이동</a>
 	</body>
 </html>
