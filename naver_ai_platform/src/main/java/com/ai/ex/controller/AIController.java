@@ -15,6 +15,7 @@ import com.ai.ex.model.CelebrityVO;
 import com.ai.ex.model.FaceVO;
 import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
+import com.ai.ex.service.OCRService;
 
 @Controller
 public class AIController {
@@ -23,6 +24,9 @@ public class AIController {
 
 	@Autowired
 	private CFRFaceRecogService cfrRecogService;
+	
+	@Autowired
+	private OCRService ocrService;
 	
 	@RequestMapping("/")
 	public String indexView() {
@@ -94,5 +98,11 @@ public class AIController {
 		model.addAttribute("fileName", originalFileName); 
 		
 		return "faceRecogView";	
+	}
+	
+	// OCR
+	@RequestMapping("/clovaOCR")
+	public void clovaOCR() {
+		ocrService.clovaOCRService();
 	}
 }
