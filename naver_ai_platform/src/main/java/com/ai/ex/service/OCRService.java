@@ -27,6 +27,8 @@ public class OCRService {
 		String apiURL = URL;
 		String secretKey = KEY;
 		String imageFile = "C:/ai/movie.jpg";
+		
+		String result = "";
 
 		try {
 			URL url = new URL(apiURL);
@@ -74,6 +76,9 @@ public class OCRService {
 			br.close();
 
 			System.out.println(response);
+			// jsonToString() 메서드 호출하고 결과가져옴
+			result = jsonToString(response.toString());
+			System.out.println(result);
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -112,5 +117,32 @@ public class OCRService {
 			out.write(("--" + boundary + "--\r\n").getBytes("UTF-8"));
 		}
 		out.flush();
+	}
+	
+	public String jsonToString(String jsonResultStr) {
+		String resultText = "";
+		
+		// API 호출 결과 받은 JSON 향태의 문자열에서 텍스트 추출
+		// JSONParser 사용하지 않음
+		
+		// images / 0 / fields / inferText
+		JSONObject jsonObj = new JSONObject(jsonResultStr);
+		JSONArray imageArray = (JSONArray) jsonObj.get("images");
+		
+		if(imageArray != null) {
+			JSONObject tempObj = (JSONObject) imageArray.get(0);
+			JSONArray fieldArray = (JSONArray) tempObj.get("fields");
+			
+			if(fieldArray != null) {
+				for(int i=0; i<fieldArray.length(); i++) {
+					tempObj = (JSONObject) fieldArray.get(i);
+					resultText += (String) tempObj.get("inferText") + " ";
+				}
+			}
+		}else {
+			System.out.println("없음");
+		}
+		
+		return resultText;
 	}
 }
