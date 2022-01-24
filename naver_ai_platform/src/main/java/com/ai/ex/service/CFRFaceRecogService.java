@@ -22,9 +22,9 @@ import com.ai.ex.model.FaceVO;
 
 @Service
 public class CFRFaceRecogService {
-	@Value("${ai.cfr.clientId}")
+	@Value("${ai.api.clientId}")
 	private String ID;
-	@Value("${ai.cfr.clientSecret}")
+	@Value("${ai.api.clientSecret}")
 	private String SECRETE;
 	
 	public ArrayList<FaceVO> faceRecog(String filePathName) {

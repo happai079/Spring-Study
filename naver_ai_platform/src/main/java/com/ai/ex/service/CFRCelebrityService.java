@@ -23,9 +23,9 @@ import com.ai.ex.model.CelebrityVO;
 @Service
 public class CFRCelebrityService {
 	
-	@Value("${ai.cfr.clientId}")
+	@Value("${ai.api.clientId}")
 	private String ID;
-	@Value("${ai.cfr.clientSecret}")
+	@Value("${ai.api.clientSecret}")
 	private String SECRETE;
 	
 	public ArrayList<CelebrityVO> clovaFaceRecogCel(String filePathName) {

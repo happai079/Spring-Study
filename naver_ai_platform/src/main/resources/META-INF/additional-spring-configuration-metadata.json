@@ -1,15 +1,5 @@
 {"properties": [
   {
-    "name": "ai.cfr.clientId",
-    "type": "java.lang.String",
-    "description": "A description for 'ai.cfr.clientId'"
-  },
-  {
-    "name": "ai.cfr.clientSecret",
-    "type": "java.lang.String",
-    "description": "A description for 'ai.cfr.clientSecret'"
-  },
-  {
     "name": "ai.ocr.secretKey",
     "type": "java.lang.String",
     "description": "A description for 'ai.ocr.secretKey'"
@@ -18,5 +8,15 @@
     "name": "ai.ocr.url",
     "type": "java.lang.String",
     "description": "A description for 'ai.ocr.url'"
+  },
+  {
+    "name": "ai.api.clientId",
+    "type": "java.lang.String",
+    "description": "A description for 'ai.api.clientId'"
+  },
+  {
+    "name": "ai.api.clientSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'ai.api.clientSecret'"
   }
 ]}

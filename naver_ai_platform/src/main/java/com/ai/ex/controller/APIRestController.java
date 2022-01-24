@@ -6,7 +6,6 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,7 +17,6 @@ public class APIRestController {
 	private OCRService ocrService;
 	
 	// 요청 받아서 서비스 호출 -> 결과 받아서 반환
-	@ResponseBody
 	@RequestMapping("/clovaOCR")
 	public String ocrUplaod(@RequestParam("uploadFile") MultipartFile file) throws IOException {
 		String uploadPath = "C:/upload/";
