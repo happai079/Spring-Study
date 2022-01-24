@@ -15,6 +15,7 @@ import com.ai.ex.model.CelebrityVO;
 import com.ai.ex.model.FaceVO;
 import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
+import com.ai.ex.service.PoseEstimationService;
 
 @Controller
 public class APIController {
@@ -23,6 +24,9 @@ public class APIController {
 
 	@Autowired
 	private CFRFaceRecogService cfrRecogService;
+
+	@Autowired
+	private PoseEstimationService poseEstimationService;
 	
 	@RequestMapping("/")
 	public String indexView() {
@@ -100,5 +104,11 @@ public class APIController {
 	@RequestMapping("/clovaOCRForm")
 	public String clovaOCR() {
 		return "ocrView";
+	}
+	
+	// Pose Estimation
+	@RequestMapping("/clovaPoseForm")
+	public String clovaPoseForm() {
+		return "poseView";
 	}
 }
