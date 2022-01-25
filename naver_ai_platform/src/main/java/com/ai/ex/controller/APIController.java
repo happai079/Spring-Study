@@ -17,6 +17,7 @@ import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
 import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
+import com.ai.ex.service.STTService;
 
 @Controller
 public class APIController {
@@ -27,7 +28,7 @@ public class APIController {
 	private CFRFaceRecogService cfrRecogService;
 
 	@Autowired
-	private ObjectDetectionService  objectDetectService;
+	private STTService sttService;
 	
 	@RequestMapping("/")
 	public String indexView() {
@@ -117,5 +118,33 @@ public class APIController {
 	@RequestMapping("/clovaObjectForm")
 	public String clovaObjectForm() {
 		return "objectView";
+	}
+
+	// STT(Speech To Text)
+	@RequestMapping("/clovaSTTForm")
+	public String clovaSTTForm() {
+		return "clovaSTTForm";
+	}
+	
+	@RequestMapping("/clovaSTT")
+	public String clovaSTT(@RequestParam("uploadFile") MultipartFile file, @RequestParam("language") String language, Model model) throws IOException {
+		// 1. 파일 저장 경로 설정: 실제 서비스되는 위치(프로젝트 외부에 저장)
+		String uploadPath = "C:/upload/";
+		
+		// 2. 원본 파일 이름 알아오기
+		String originalFileName = file.getOriginalFilename();
+		String filePathName = uploadPath + originalFileName;
+		
+		// 3. 파일 생성
+		File file1 = new File(filePathName);
+		
+		// 4. 서버로 전송
+		file.transferTo(file1);
+		
+		String result = sttService.STTservice(filePathName, language);
+		model.addAttribute("result", result);
+		model.addAttribute("file", originalFileName);
+		
+		return "clovaSTTForm";
 	}
 }
