@@ -25,13 +25,13 @@ public class PoseEstimationService {
 	@Value("${ai.api.clientId}")
 	private String ID;
 	@Value("${ai.api.clientSecret}")
-	private String SECRETE;
+	private String SECRET;
 	
 	public ArrayList<PoseVO> poseEstimate(String filePathName) {
 		
 		StringBuffer reqStr = new StringBuffer();
         String clientId = ID;//애플리케이션 클라이언트 아이디값";
-        String clientSecret = SECRETE;//애플리케이션 클라이언트 시크릿값";
+        String clientSecret = SECRET;//애플리케이션 클라이언트 시크릿값";
         ArrayList<PoseVO> poseList = new ArrayList<PoseVO>();
         
         try {
