@@ -13,5 +13,6 @@
 		<a href="faceRecogForm">얼굴 감지</a><br><br>
 		<a href="clovaOCRForm">OCR</a><br><br>
 		<a href="clovaPoseForm">포즈 인식</a><br><br>
+		<a href="clovaObjectForm">객체 탐지</a><br><br>
 	</body>
 </html>
