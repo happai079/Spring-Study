@@ -1,6 +1,9 @@
 package com.ai.ex.controller;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -15,9 +18,8 @@ import com.ai.ex.model.CelebrityVO;
 import com.ai.ex.model.FaceVO;
 import com.ai.ex.service.CFRCelebrityService;
 import com.ai.ex.service.CFRFaceRecogService;
-import com.ai.ex.service.ObjectDetectionService;
-import com.ai.ex.service.PoseEstimationService;
 import com.ai.ex.service.STTService;
+import com.ai.ex.service.TTSService;
 
 @Controller
 public class APIController {
@@ -29,6 +31,9 @@ public class APIController {
 
 	@Autowired
 	private STTService sttService;
+
+	@Autowired
+	private TTSService ttsService;
 	
 	@RequestMapping("/")
 	public String indexView() {
@@ -146,5 +151,31 @@ public class APIController {
 		model.addAttribute("file", originalFileName);
 		
 		return "clovaSTTForm";
+	}
+	
+	@RequestMapping("/clovaTTSForm")
+	public String clovaTTSForm() {
+		return "clovaTTSForm";
+	}
+	
+	@RequestMapping("/clovaTTS")
+	public String clovaTTS(@RequestParam("uploadFile") MultipartFile file, @RequestParam("speaker") String speaker, Model model) throws IOException {
+		// 1. 파일 저장 경로 설정: 실제 서비스되는 위치(프로젝트 외부에 저장)
+		String uploadPath = "C:/upload/";
+		
+		// 2. 원본 파일 이름 알아오기
+		String originalFileName = file.getOriginalFilename();
+		String filePathName = uploadPath + originalFileName;
+		
+		// 3. 파일 생성
+		File file1 = new File(filePathName);
+		
+		// 4. 서버로 전송
+		file.transferTo(file1);
+		
+		String result = ttsService.clovaTextToSpeech(filePathName, speaker);
+		model.addAttribute("result", result);
+		
+		return "clovaTTSForm";
 	}
 }
