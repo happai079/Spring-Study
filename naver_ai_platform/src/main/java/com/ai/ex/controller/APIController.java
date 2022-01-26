@@ -1,9 +1,6 @@
 package com.ai.ex.controller;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -34,7 +31,7 @@ public class APIController {
 
 	@Autowired
 	private TTSService ttsService;
-	
+
 	@RequestMapping("/")
 	public String indexView() {
 		return "index";
@@ -177,5 +174,11 @@ public class APIController {
 		model.addAttribute("result", result);
 		
 		return "clovaTTSForm";
+	}
+	
+	// 챗봇
+	@RequestMapping("/chatbotForm")
+	public String chatbotForm() {
+		return "chatbotForm";
 	}
 }

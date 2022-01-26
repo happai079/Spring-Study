@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ai.ex.model.ObjectVO;
 import com.ai.ex.model.PoseVO;
+import com.ai.ex.service.ChatbotService;
 import com.ai.ex.service.OCRService;
 import com.ai.ex.service.ObjectDetectionService;
 import com.ai.ex.service.PoseEstimationService;
@@ -27,8 +27,11 @@ public class APIRestController {
 	
 	@Autowired
 	private ObjectDetectionService objectService;
+
+	@Autowired
+	private ChatbotService chatService;
 	
-	// 요청 받아서 서비스 호출 -> 결과 받아서 반환
+	// OCR
 	@RequestMapping("/clovaOCR")
 	public String ocrUplaod(@RequestParam("uploadFile") MultipartFile file) throws IOException {
 		String uploadPath = "C:/upload/";
@@ -45,6 +48,7 @@ public class APIRestController {
 		return result;
 	}
 	
+	// 포즈인식
 	@RequestMapping("/poseDetect")
 	public ArrayList<PoseVO> poseDetect(@RequestParam("uploadFile") MultipartFile file) throws IOException {
 		// 1. 파일 저장 경로 설정: 실제 서비스되는 위치(프로젝트 외부에 저장)
@@ -65,6 +69,7 @@ public class APIRestController {
 		return poseList;	
 	}
 	
+	// 객체 탐지
 	@RequestMapping("/objectDetect")
 	public ArrayList<ObjectVO> objectDetect(@RequestParam("uploadFile") MultipartFile file) throws IOException {
 		// 1. 파일 저장 경로 설정: 실제 서비스되는 위치(프로젝트 외부에 저장)
@@ -83,5 +88,12 @@ public class APIRestController {
 		ArrayList<ObjectVO> objectList = objectService.clovaObjectDetect(filePathName);
 		
 		return objectList;	
+	}
+	
+	// 쳇봇
+	@RequestMapping("/chatbot")
+	public String chatbot(@RequestParam("message") String message) {
+		String result = chatService.main(message);
+		return result;
 	}
 }
