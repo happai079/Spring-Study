@@ -1,10 +1,18 @@
 /**
- * chatbot.js
+ * chatbot2.js
  */
  
  $(function(){
+	callAjax();
+	
 	$('#chatbotForm').on('submit', function(event){
 		event.preventDefault();
+		
+		// 메시지 입력하지 않고 [전송] 버튼 누른 경우 (웰컴 메시지 출력되지 않도록)
+		if ($('#message').val() == ""){
+			alert("질문을 입력하세요");
+			return false;
+		}		
 		
 		/* chatBox에 보낸 메시지 추가 */
 		if($('#message').val() != ""){
@@ -12,6 +20,16 @@
 									$('#message').val() + '</span></span></div><br>');
 		}
 		
+		callAjax();
+		
+		/* 입력란 비우기*/
+		$('#message').val('');
+	});
+	
+	// 웰컴 메세지를 받기 위해서 message 입력받기 전해
+	// 빈 값으로 서버에 전송하송하고 웰컴 메세지를 받기 위해
+	// $.ajax()를 별도의 function으로 분리	
+	function callAjax(){
 		$.ajax({
 			url:"chatbot",
 			type:"post",
@@ -27,8 +45,5 @@
 				alert("오류가 발생했습니다.")
 			}
 		});
-		
-		/* 입력란 비우기*/
-		$('#message').val('');
-	});		
+	}
 });

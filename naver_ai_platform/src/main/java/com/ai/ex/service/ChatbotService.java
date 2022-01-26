@@ -28,7 +28,6 @@ public class ChatbotService {
 		String secretKey = KEY;
 
         String chatbotMessage = ""; // 응답 메세지
-        String result = "";
 
         try {
             //String apiURL = "https://ex9av8bv0e.apigw.ntruss.com/custom_chatbot/prod/";
@@ -67,9 +66,10 @@ public class ChatbotService {
                 }
                 //chatbotMessage = decodedString;
                 in.close();
+                System.out.println(chatbotMessage);
                 
                 // json -> String
-                result = jsonToString(chatbotMessage);
+                chatbotMessage = jsonToString(chatbotMessage);
 
             } else {  // Error occurred
                 chatbotMessage = con.getResponseMessage();
@@ -78,7 +78,7 @@ public class ChatbotService {
             System.out.println(e);
         }
 
-        return result;
+        return chatbotMessage;
     }
 
     public static String makeSignature(String message, String secretKey) {
@@ -137,9 +137,17 @@ public class ChatbotService {
             bubbles_array.put(bubbles_obj);
 
             obj.put("bubbles", bubbles_array);
-            obj.put("event", "send");
-
-            requestBody = obj.toString();
+			/* obj.put("event", "send");*/
+            
+            // 웰컴 메시지 출력
+            if(voiceMessage == "") {
+            	obj.put("event", "open"); //웰컴 메시지
+            }else {
+            	obj.put("event", "send");
+            }
+            
+            requestBody = obj.toString();            
+            
 
         } catch (Exception e){
             System.out.println("## Exception : " + e);
