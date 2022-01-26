@@ -17,5 +17,6 @@
 		<a href="clovaSTTForm">Speech To Text</a><br><br>
 		<a href="clovaTTSForm">Text To Speech</a><br><br>
 		<a href="chatbotForm">Chatbot</a><br><br>
+		<a href="chatbotForm2">Chatbot2</a><br><br>
 	</body>
 </html>

@@ -181,4 +181,10 @@ public class APIController {
 	public String chatbotForm() {
 		return "chatbotForm";
 	}
+
+	// 챗봇2
+	@RequestMapping("/chatbotForm2")
+	public String chatbotForm2() {
+		return "chatbotForm2";
+	}
 }
