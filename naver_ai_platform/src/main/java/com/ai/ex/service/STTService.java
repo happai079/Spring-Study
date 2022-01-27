@@ -82,9 +82,10 @@ public class STTService {
         return result;
 	}
 	
+	// 챗봇 음성 채팅을 위한 STT
 	public String clovaSpeechToText(String filePathName) {
-		String clientId = "6to327c88d";             // Application Client ID";
-        String clientSecret = "HqfsYXHJrk5mWcv3hgJQq3qk94YebLJ0knjw5M1k";     // Application Client Secret";
+		String clientId = ID;             // Application Client ID";
+        String clientSecret = SECRET;     // Application Client Secret";
         
         String result = "";
         

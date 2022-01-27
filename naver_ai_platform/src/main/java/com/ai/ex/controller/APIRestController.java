@@ -131,8 +131,8 @@ public class APIRestController {
 		return result; // 저장된 음성 파일명 반환
 	}
 	
-	// STT
-	@RequestMapping("/clovaSTT2")
+	// 챗봇 STT
+	@RequestMapping("/chatbotSTT")
 	public String  clovaSTT(@RequestParam("uploadFile") MultipartFile file) {		
 		
 		String result = "";

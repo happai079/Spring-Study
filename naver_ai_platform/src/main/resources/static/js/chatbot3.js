@@ -87,7 +87,7 @@
     	$.ajax({    		
 			type:"post",	
 			enctype: 'multipart/form-data',
-			url: "clovaSTT2", //통신할 url		
+			url: "chatbotSTT", //통신할 url		
 			data: formData, //전송할 데이타	: 파일명 :voiceMsg.mp3
 			processData: false,
     		contentType: false,

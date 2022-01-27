@@ -78,8 +78,8 @@ public class TTSService {
 	
 	// 챗봇으로 부터 받은 텍스트 답변을 음성으로 변환
 	public String chatbotTextToSpeech(String message) {
-		String clientId = "6to327c88d";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "HqfsYXHJrk5mWcv3hgJQq3qk94YebLJ0knjw5M1k";//애플리케이션 클라이언트 시크릿값";
+		String clientId = ID;//애플리케이션 클라이언트 아이디값";
+        String clientSecret = SECRET;//애플리케이션 클라이언트 시크릿값";
         
         String voiceFileName = "";
         
