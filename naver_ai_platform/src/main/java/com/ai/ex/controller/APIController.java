@@ -182,15 +182,21 @@ public class APIController {
 		return "chatbotForm";
 	}
 
-	// 챗봇2
+	// 챗봇2 - 채팅창 UI
 	@RequestMapping("/chatbotForm2")
 	public String chatbotForm2() {
 		return "chatbotForm2";
 	}
 
-	// 챗봇3
+	// 챗봇3 - 음성 채팅 추가
 	@RequestMapping("/chatbotForm3")
 	public String chatbotForm3() {
 		return "chatbotForm3";
+	}
+
+	// 챗봇4 - 이미지, 멀티링크 추가
+	@RequestMapping("/chatbotForm4")
+	public String chatbotForm4() {
+		return "chatbotForm4";
 	}
 }

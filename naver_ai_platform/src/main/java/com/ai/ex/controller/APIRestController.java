@@ -176,4 +176,11 @@ public class APIRestController {
 		String result = ttsService.chatbotTextToSpeech(message);
 		return result;  // voiceFileName;  // 저장된 음성 파일명 반환
 	}
+	
+	// 쳇봇 - 이미지, 멀티 링크 포함
+	@RequestMapping("/chatbotImgLink")
+	public String chatbotImgLink(@RequestParam("message") String message) {
+		String result = chatService.imgLinkMainService(message);
+		return result; // JSON 형태 그대로 넘김
+	}
 }
